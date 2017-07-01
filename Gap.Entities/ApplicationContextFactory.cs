@@ -9,7 +9,7 @@ namespace Gap.Entities
         {
             var builder = new DbContextOptionsBuilder<ApplicationContext>();
             builder.UseSqlServer(
-                "server=localhost; database=vega; user id=sa; password=MyComplexPassword!234");
+                "server=localhost; database=GapStore; user id=sa; password=MyComplexPassword!234");
 
             return new ApplicationContext(builder.Options);
         }

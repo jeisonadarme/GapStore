@@ -14,11 +14,11 @@ namespace Gap.SuperZapatos.Controllers
             _storeService = storeService;
         }
         
-        [HttpPost]
-        public ActionResult Create(StoreModel model)
+        //[HttpPost]
+        public ActionResult Create()//StoreModel model)
         {
-            var store = new Store();
-            _storeService.Create(store);
+            //var store = new Store();
+            var list = _storeService.GetAll();
             
             return Ok();
         }

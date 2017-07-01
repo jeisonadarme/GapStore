@@ -8,8 +8,8 @@ using Gap.Entities;
 namespace Gap.Entities.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20170701172356_InitialModel")]
-    partial class InitialModel
+    [Migration("20170701192737_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

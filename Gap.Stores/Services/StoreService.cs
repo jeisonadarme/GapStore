@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Gap.Entities.Stores;
 using Microsoft.Extensions.Logging;
 
@@ -15,16 +16,21 @@ namespace Gap.Stores.Services
             _logger = logger;
         }
         
-        public void Create(Store store)
+        public void Insert(Store store)
         {
             try
             {
-                _repository.create(store);
+                _repository.Insert(store);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
             }
+        }
+
+        public IEnumerable<Store> GetAll()
+        {
+            return _repository.GetAll();
         }
     }
 }

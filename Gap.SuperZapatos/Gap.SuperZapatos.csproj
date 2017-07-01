@@ -15,6 +15,7 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gap.Entities\Gap.Entities.csproj" />
     <ProjectReference Include="..\Gap.Stores\Gap.Stores.csproj" />
   </ItemGroup>
 </Project>

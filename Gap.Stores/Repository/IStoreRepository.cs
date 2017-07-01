@@ -1,9 +1,11 @@
-﻿using Gap.Entities.Stores;
+﻿using System.Collections.Generic;
+using Gap.Entities;
+using Gap.Entities.Stores;
 
 namespace Gap.Stores.Services
 {
-    public interface IStoreRepository
+    public interface IStoreRepository : IGenericRepository<Store>
     {
-        void create(Store  store);
+
     }
 }
