@@ -1,7 +1,11 @@
-﻿using Gap.Entities.Stores;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
+using Gap.Entities.Stores;
 using Gap.Stores.Services;
 using Gap.SuperZapatos.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 namespace Gap.SuperZapatos.Controllers
 {
@@ -9,18 +13,37 @@ namespace Gap.SuperZapatos.Controllers
     {
         private readonly IStoreService _storeService;
 
-        public StoreController(IStoreService storeService)
+        private readonly IMapper _mapper;
+        
+        public StoreController(IStoreService storeService, IMapper mapper)
         {
             _storeService = storeService;
+            _mapper = mapper;
         }
         
-        //[HttpPost]
-        public ActionResult Create()//StoreModel model)
+        [HttpPost]
+        public async Task<ActionResult> Create([FromBody]StoreModel model)
         {
-            //var store = new Store();
-            var list = _storeService.GetAll();
+            var store = _mapper.Map<StoreModel, Store>(model);
+            await _storeService.Insert(store);
+            return Ok(new
+            {
+                Success = true
+            });
+        }
+
+        //("services/stores")
+        [HttpGet]
+        public async Task<ActionResult> Get()
+        {
+            var result = await _storeService.GetAll();
             
-            return Ok();
+            return Ok(new
+            {
+                Success = true,
+                TotalElements = result.Count(),
+                Stores = result
+            });
         }
     }
 }

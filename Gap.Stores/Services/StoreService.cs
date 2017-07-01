@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Gap.Entities.Stores;
 using Microsoft.Extensions.Logging;
 
@@ -16,11 +17,14 @@ namespace Gap.Stores.Services
             _logger = logger;
         }
         
-        public void Insert(Store store)
+        public async Task Insert(Store store)
         {
             try
             {
-                _repository.Insert(store);
+                store.AddedDate = DateTime.Now;
+                store.ModifiedDate = DateTime.Now;
+                
+                await _repository.Insert(store);
             }
             catch (Exception ex)
             {
@@ -28,9 +32,36 @@ namespace Gap.Stores.Services
             }
         }
 
-        public IEnumerable<Store> GetAll()
+        public async Task<IEnumerable<Store>> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
+        }
+
+        public async Task<Store> Get(int id)
+        {
+            return await _repository.Get(id);
+        }
+
+        public async Task Update(Store store)
+        {
+            try{
+               await _repository.Update(store);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+        }
+
+        public async Task Delete(Store store)
+        {
+            try{
+                await _repository.Delete(store);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
         }
     }
 }

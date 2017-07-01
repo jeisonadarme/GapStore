@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Gap.Entities;
 using Gap.Stores.Services;
 using Microsoft.AspNetCore.Builder;
@@ -34,7 +35,7 @@ namespace Gap.SuperZapatos
             services.AddMvc();
             services.AddSingleton<IStoreRepository, StoreRepository>();
             services.AddSingleton<IStoreService, StoreService>();
-            
+            services.AddAutoMapper();
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
         }
@@ -57,6 +58,11 @@ namespace Gap.SuperZapatos
 
             app.UseStaticFiles();
 
+            app.UseCors(builder =>
+                    builder.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

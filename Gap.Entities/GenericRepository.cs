@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using Gap.Entities.Common;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Extensions.Internal;
 
 namespace Gap.Entities
 {
-    public class GenericRepository<TEntity> where TEntity : BaseEntity
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
+        //GenericRepository<TEntity> where TEntity : BaseEntity
     {
         private readonly ApplicationContext _context;
 
@@ -47,43 +50,46 @@ namespace Gap.Entities
             }
         }
         
-        public IEnumerable<TEntity> GetAll()
+        public async Task<IEnumerable<TEntity>> GetAll()
         {
-            return Entities.AsEnumerable();
+            return await Entities.ToListAsync();
         }
 
         
-        public TEntity Get(int id)
+        public async Task<TEntity> Get(int id)
         {
-            return Entities.SingleOrDefault(s => s.Id == id);
+            return await Entities.SingleOrDefaultAsync(s => s.Id == id);
         }
-        public void Insert(TEntity entity)
+        
+        public async Task Insert(TEntity entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
             Entities.Add(entity);
-            _context.SaveChanges();
+            
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(TEntity entity)
+        public async Task Update(TEntity entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(TEntity entity)
+        public async Task Delete(TEntity entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
             Entities.Remove(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
         }
     }
 }

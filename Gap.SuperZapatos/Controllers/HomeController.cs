@@ -18,7 +18,7 @@ namespace Gap.SuperZapatos.Controllers
         
         public IActionResult Index()
         {
-            var list = _storeService.GetAll();
+            //var list = _storeService.GetAll();
             return View();
         }
 
