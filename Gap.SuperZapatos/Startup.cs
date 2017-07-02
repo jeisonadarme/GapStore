@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Gap.Articles.Repository;
+using Gap.Articles.Services;
 using Gap.Entities;
 using Gap.Stores.Services;
 using Microsoft.AspNetCore.Builder;
@@ -33,8 +35,13 @@ namespace Gap.SuperZapatos
         {
             // Add framework services.
             services.AddMvc();
+            
             services.AddSingleton<IStoreRepository, StoreRepository>();
             services.AddSingleton<IStoreService, StoreService>();
+            
+            services.AddSingleton<IArticleRepository, ArticleRepository>();
+            services.AddSingleton<IArticleService, ArticleService>();
+            
             services.AddAutoMapper();
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 

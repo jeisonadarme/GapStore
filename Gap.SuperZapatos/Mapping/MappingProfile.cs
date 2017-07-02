@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Gap.Entities.Articles;
 using Gap.Entities.Stores;
 using Gap.SuperZapatos.Models;
 
@@ -11,6 +12,8 @@ namespace Gap.SuperZapatos.Mapping
             CreateMap<Store, StoreModel>();            
             CreateMap<StoreModel, Store>();
 
+            CreateMap<Article, ArticleModel>().ForMember(dest => dest.StoreName, opt => opt.MapFrom(x => x.Store.Name));
+            CreateMap<ArticleModel, Article>();
         }
     }
 }

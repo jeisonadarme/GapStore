@@ -9,10 +9,10 @@ namespace Gap.Entities.Stores
             entityTypeBuilder.HasKey(x => x.Id);
 
             entityTypeBuilder.Property(x => x.Name).IsRequired();
-            entityTypeBuilder.Property(x => x.Adress).IsRequired();
+            entityTypeBuilder.Property(x => x.Address).IsRequired();
             
             entityTypeBuilder.Property(x => x.Name).HasMaxLength(50);
-            entityTypeBuilder.Property(x => x.Adress).HasMaxLength(250);
+            entityTypeBuilder.Property(x => x.Address).HasMaxLength(250);
         }
     }
 }

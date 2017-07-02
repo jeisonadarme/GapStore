@@ -22,11 +22,12 @@ namespace Gap.Entities
             this.Entities = context.Set<TEntity>();
         }
         
-        public virtual IEnumerable<TEntity> Get(
+        public async Task<IEnumerable<TEntity>> GetAllBy(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = "")
         {
+            
             IQueryable<TEntity> query = Entities;
 
             if (filter != null)
@@ -42,11 +43,11 @@ namespace Gap.Entities
 
             if (orderBy != null)
             {
-                return orderBy(query).ToList();
+                return await orderBy(query).ToListAsync();
             }
             else
             {
-                return query.ToList();
+                return await query.ToListAsync();
             }
         }
         
