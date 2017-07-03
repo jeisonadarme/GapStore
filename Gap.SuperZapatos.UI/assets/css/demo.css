@@ -992,3 +992,36 @@ pre.prettyprint{
 .example-pages{
     margin-top: 50px;
 }
+
+
+.navbar{
+    padding: 0 !important;
+}
+
+.detail{
+    margin-top: 20px;
+}
+
+.name{
+    text-transform: uppercase;
+}
+
+body{
+    background-color: #FFFCF5;
+}
+
+.detail-img{
+    height: 500px;
+}
+
+.dropdown-menu-right{
+    left: 0;
+}
+
+
+@media only screen and (max-device-width: 768px) {
+
+    .pull-left {
+        display: none;
+    }
+}

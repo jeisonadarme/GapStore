@@ -22,6 +22,34 @@
     <ProjectReference Include="..\Gap.Stores\Gap.Stores.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\css\bootstrap3\js" />
+    <Content Remove="wwwroot\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views" />
+    <Folder Include="wwwroot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Home\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Home\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Home\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Shared\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Shared\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Shared\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\_ViewImports.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\_ViewStart.cshtml" />
   </ItemGroup>
 </Project>

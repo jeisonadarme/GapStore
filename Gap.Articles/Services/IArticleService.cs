@@ -11,6 +11,8 @@ namespace Gap.Articles.Services
         Task<IEnumerable<Article>> GetAll();
 
         Task<Article> Get(int id);
+        
+        Task<Article> GetWihtStore(int id);
 
         Task<IEnumerable<Article>> GetAllByStoreId(int id);
         

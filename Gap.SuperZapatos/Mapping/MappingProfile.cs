@@ -13,6 +13,8 @@ namespace Gap.SuperZapatos.Mapping
             CreateMap<StoreModel, Store>();
 
             CreateMap<Article, ArticleModel>().ForMember(dest => dest.StoreName, opt => opt.MapFrom(x => x.Store.Name));
+            CreateMap<Article, ArticleModel>().ForMember(dest => dest.StoreAddress, opt => opt.MapFrom(x => x.Store.Address));
+
             CreateMap<ArticleModel, Article>();
         }
     }

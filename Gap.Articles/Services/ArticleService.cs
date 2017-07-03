@@ -44,6 +44,11 @@ namespace Gap.Articles.Services
             return await _repository.Get(id);
         }
 
+        public async Task<Article> GetWihtStore(int id)
+        {
+            return await _repository.GetWithStore(id);
+        }
+
         public async Task<IEnumerable<Article>> GetAllByStoreId(int id)
         {
             return await _repository.GetAllBy(x => x.StoreId == id, null, "Store");

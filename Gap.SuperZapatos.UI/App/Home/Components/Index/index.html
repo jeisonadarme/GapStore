@@ -1,10 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+
+<div class="wrapper">
+    <div class="profile-background">
+        <div class="filter-black"></div>
+    </div>
+    <div class="profile-content section-nude">
+        <div class="container">
+            <div class="profile-tabs">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                            <li class="active"><a href="#articles" data-toggle="tab">Articles</a></li>
+                            <li><a href="#stores" data-toggle="tab">Stores</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="my-tab-content" class="tab-content">
+                    <div class="tab-pane active" id="articles">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <ul class="list-unstyled follows">
+
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-4 col-xs-4">
+                                                <button href="#" class="dropdown-toggle btn btn-success" data-toggle="dropdown" aria-expanded="false">
+                                                    Filter By Store <b class="caret"></b>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-success dropdown-menu-right">
+                                                    <li class="dropdown-header">Select a Store</li>
+                                                    <li ng-repeat="store in $ctrl.stores"><a href="#" ng-click="$ctrl.filterBy(store.id)">{{store.name}}</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#" ng-click="$ctrl.filterBy(-1)">Clear</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4 col-xs-4">
+                                               
+                                            </div>
+                                            <div class="col-md-2 col-xs-4">
+                                              
+                                            </div>
+                                            <div class="col-md-2 text-center">
+                                               
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <div ng-repeat="article in $ctrl.articles">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-md-4 col-xs-4">
+                                                    <h6>{{article.name}}</h6>
+                                                </div>
+                                                <div class="col-md-3 col-xs-4">
+                                                    <h6>{{article.storeName}}<br /><small>{{article.storeAddress}}</small></h6>
+                                                </div>
+                                                <div class="col-md-2 col-xs-4">
+                                                    <h6>Price<br /><small>{{article.price | currency:"USD ":0}}$</small></h6>
+                                                </div>
+                                                <div class="col-md-3 text-center">
+                                                    <a class="btn btn-warning btn-fill" ng-link="['Detail', {id: article.id}]">View More</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <hr />
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="stores">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <ul class="list-unstyled follows">
+                                    <div ng-repeat="store in $ctrl.stores">
+                                        <li>
+                                            <div class="row">
+
+                                                <div class="col-md-3 col-xs-0"></div>
+                                                
+                                                <div class="col-md-2 col-xs-0">
+                                                    <img src="../../../../assets/img/open.png" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                </div>
+                                                <div class="col-md-4 col-xs-12">
+                                                    <h6>{{store.name}}<br /><small>{{store.address}}</small></h6>
+                                                </div>
+                                                <div class="col-md-3 col-xs-0"></div>
+                                            </div>
+                                        </li>
+                                        <hr />
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

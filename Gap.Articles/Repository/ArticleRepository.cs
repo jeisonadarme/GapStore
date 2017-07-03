@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Gap.Entities;
 using Gap.Entities.Articles;
@@ -19,6 +20,11 @@ namespace Gap.Articles.Repository
         public async Task<IEnumerable<Article>> GetAllWithStore()
         {
             return await Entities.Include(x => x.Store).ToListAsync();
+        }
+
+        public async Task<Article> GetWithStore(int id)
+        {
+            return await Entities.Where(x => x.Id == id).Include(x => x.Store).FirstOrDefaultAsync();
         }
     }
 }

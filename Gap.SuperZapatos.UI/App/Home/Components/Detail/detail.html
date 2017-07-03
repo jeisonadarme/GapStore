@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <div class="profile-background">
+        <div class="filter-black"></div>
+    </div>
+    <div class="profile-content section-nude">
+        <div class="container">
+            <div class="row detail"> 
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <img src="../../../../assets/img/detail.jpg" alt="Detail Image" class="img-responsive">
+                </div>
+                <div class="col-md-6">
+                    <div class="row owner">
+                        <div class="col-md-6">
+                            <div class="name">
+                                <h4>{{$ctrl.article.name}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table table-hover">
+                                <tbody>
+                                <tr>
+                                    <td>Price:</td>
+                                    <td>{{$ctrl.article.price | currency:"USD ":0}}$</td>
+                                </tr>
+                                <tr>
+                                    <td>Total in Shelf:</td>
+                                    <td>{{$ctrl.article.totalInShelf}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Total in Vault:</td>
+                                    <td>{{$ctrl.article.totalInVault}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Decription:</td>
+                                    <td>{{$ctrl.article.description}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <a class="btn" ng-link="['Index']"><i class="fa fa-arrow-left"></i>Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .footer-demo{
+        position: absolute;
+        bottom: -70px;
+        width: 100%;
+    }
+</style>

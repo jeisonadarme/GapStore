@@ -19,5 +19,7 @@ namespace Gap.SuperZapatos.Models
         public int TotalInVault { get; set; }
 
         public string StoreName { get; set; }
+
+        public string StoreAddress { get; set; }
     }
 }

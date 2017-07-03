@@ -32,7 +32,7 @@ namespace Gap.SuperZapatos.Controllers
             });
         }
 
-        [HttpGet]
+        [HttpGet("services/articles")]
         public async Task<ActionResult> Get()
         {
             var result = await _articleService.GetAllWithStore();
@@ -46,8 +46,22 @@ namespace Gap.SuperZapatos.Controllers
             });
         }
         
-        [HttpGet("article/get/{id}")]
+        
+        [HttpGet("services/articles/{id}")]
         public async Task<ActionResult> Get(int id)
+        {
+            var result = await _articleService.GetWihtStore(id);
+            var article = _mapper.Map<Article, ArticleModel>(result);
+            
+            return Ok(new
+            {
+                Success = true,
+                Article = article
+            });
+        }
+        
+        [HttpGet("services/articles/stores/{id}")]
+        public async Task<ActionResult> Stores(int id)
         {
             var result = await _articleService.GetAllByStoreId(id);
             var articles = _mapper.Map<IEnumerable<Article>, IEnumerable<ArticleModel>>(result);

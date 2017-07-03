@@ -8,5 +8,7 @@ namespace Gap.Articles.Repository
     public interface IArticleRepository : IGenericRepository<Article>
     {
         Task<IEnumerable<Article>> GetAllWithStore();
+        
+        Task<Article> GetWithStore(int id);
     }
 }
