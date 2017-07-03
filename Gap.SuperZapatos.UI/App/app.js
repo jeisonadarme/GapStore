@@ -4,7 +4,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('app', ['ngComponentRouter','index', 'detail'])
+    angular.module('app', ['ngComponentRouter','index', 'detail', 'create','ui.utils.masks'])
         .config(function ($locationProvider) {
             $locationProvider.html5Mode(true);
         })
@@ -14,7 +14,8 @@
             bindings: { $router: '<' },
             $routeConfig: [
                 { path: "/", name: "Index", component: "index", useAsDefault: true },
-                { path: "/detail/:id", name: "Detail", component: "detail" }
+                { path: "/detail/:id", name: "Detail", component: "detail" },
+                { path: "/administration", name: "Create", component: "create" }
             ]
         });
 })(window.angular);

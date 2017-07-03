@@ -55,7 +55,7 @@
                                                     <h6>{{article.storeName}}<br /><small>{{article.storeAddress}}</small></h6>
                                                 </div>
                                                 <div class="col-md-2 col-xs-4">
-                                                    <h6>Price<br /><small>{{article.price | currency:"USD ":0}}$</small></h6>
+                                                    <h6>Price<br /><small>{{article.price | currency}}</small></h6>
                                                 </div>
                                                 <div class="col-md-3 text-center">
                                                     <a class="btn btn-warning btn-fill" ng-link="['Detail', {id: article.id}]">View More</a>

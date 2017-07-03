@@ -27,9 +27,22 @@
                 })
             };
             
+            var post = function (store, callback) {
+                $http({
+                    url: url + "/store/create",
+                    method: "post",
+                    data: store
+                }).then(function successCallback(response) {
+                    return callback(false, response);
+                }, function errorCallback(response) {
+                    return callback(true, response);
+                });
+            };
+            
             return {
                 getAll: getAll,
-                get: get
+                get: get,
+                post: post
             }
         }])
 })();

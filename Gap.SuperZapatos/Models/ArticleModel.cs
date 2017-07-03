@@ -12,7 +12,7 @@ namespace Gap.SuperZapatos.Models
         [Required]
         public string Description { get; set; }
         [Required]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         [Required]
         public int TotalInShelf { get; set; }
         [Required]

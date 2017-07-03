@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gap.Articles", "Gap.Article
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gap.Entities", "Gap.Entities\Gap.Entities.csproj", "{9B1EC483-874F-4108-BE49-8A2427A0AFFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gap.SuperZapatos.UI", "Gap.SuperZapatos.UI\Gap.SuperZapatos.UI.csproj", "{250C0737-DE01-4983-8003-FCCCFA3F6D8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gap.SuperZapatos.UI", "Gap.SuperZapatos.UI\Gap.SuperZapatos.UI.csproj", "{0BD141B3-BEF1-4637-9CD9-39863B5AE6AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{9B1EC483-874F-4108-BE49-8A2427A0AFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B1EC483-874F-4108-BE49-8A2427A0AFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B1EC483-874F-4108-BE49-8A2427A0AFFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{250C0737-DE01-4983-8003-FCCCFA3F6D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{250C0737-DE01-4983-8003-FCCCFA3F6D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{250C0737-DE01-4983-8003-FCCCFA3F6D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{250C0737-DE01-4983-8003-FCCCFA3F6D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BD141B3-BEF1-4637-9CD9-39863B5AE6AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD141B3-BEF1-4637-9CD9-39863B5AE6AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BD141B3-BEF1-4637-9CD9-39863B5AE6AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD141B3-BEF1-4637-9CD9-39863B5AE6AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

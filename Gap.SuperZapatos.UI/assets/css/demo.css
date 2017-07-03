@@ -1025,3 +1025,8 @@ body{
         display: none;
     }
 }
+
+
+.toast-top-right{
+    top: 40px !important;
+}

@@ -1,89 +1,47 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{250C0737-DE01-4983-8003-FCCCFA3F6D8E}</ProjectGuid>
-    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gap.SuperZapatos.UI</RootNamespace>
-    <AssemblyName>Gap.SuperZapatos.UI</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="App\app.js" />
-    <Content Include="App\Home\Components\Detail\detail.html" />
-    <Content Include="App\Home\Components\Detail\detailController.js" />
-    <Content Include="App\Home\Components\Index\index.html" />
-    <Content Include="App\Home\Components\Index\indexController.js" />
-    <Content Include="App\Services\articlesService.js" />
-    <Content Include="App\Services\storesService.js" />
-    <Content Include="assets\css\.DS_Store" />
-    <Content Include="assets\css\ct-paper.css" />
-    <Content Include="assets\css\demo.css" />
-    <Content Include="assets\css\examples.css" />
-    <Content Include="assets\fonts\.DS_Store" />
-    <Content Include="assets\img\detail.jpg" />
-    <Content Include="assets\img\open.png" />
-    <Content Include="assets\img\shoes.jpg" />
-    <Content Include="assets\js\.DS_Store" />
-    <Content Include="assets\js\bootstrap-datepicker.js" />
-    <Content Include="assets\js\bootstrap-select.js" />
-    <Content Include="assets\js\ct-paper-checkbox.js" />
-    <Content Include="assets\js\ct-paper-radio.js" />
-    <Content Include="assets\js\ct-paper.js" />
-    <Content Include="assets\js\jquery-1.10.2.js" />
-    <Content Include="assets\js\jquery-ui-1.10.4.custom.min.js" />
-    <Content Include="assets\js\presentation-page\.DS_Store" />
-    <Content Include="bootstrap3\.DS_Store" />
-    <Content Include="bootstrap3\css\.DS_Store" />
-    <Content Include="bootstrap3\css\bootstrap-theme.css" />
-    <Content Include="bootstrap3\css\bootstrap-theme.min.css" />
-    <Content Include="bootstrap3\css\bootstrap.css" />
-    <Content Include="bootstrap3\css\bootstrap.min.css" />
-    <Content Include="bootstrap3\css\font-awesome.css" />
-    <Content Include="bootstrap3\fonts\fontawesome-webfont.eot" />
-    <Content Include="bootstrap3\fonts\fontawesome-webfont.svg" />
-    <Content Include="bootstrap3\fonts\fontawesome-webfont.ttf" />
-    <Content Include="bootstrap3\fonts\fontawesome-webfont.woff" />
-    <Content Include="bootstrap3\fonts\FontAwesome.otf" />
-    <Content Include="bootstrap3\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="bootstrap3\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="bootstrap3\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="bootstrap3\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="bootstrap3\js\bootstrap.js" />
-    <Content Include="bootstrap3\js\bootstrap.min.js" />
-    <Content Include="index.html" />
-    <Content Include="package.json" />
+    <Folder Include="App\Home\Components\Detail" />
+    <Folder Include="App\Home\Components\Index" />
+    <Folder Include="App\Services" />
+    <Folder Include="assets\css" />
+    <Folder Include="assets\img" />
+    <Folder Include="assets\js" />
+    <Folder Include="bootstrap3\css" />
+    <Folder Include="bootstrap3\fonts" />
+    <Folder Include="bootstrap3\js" />
+    <Folder Include="node_modules\base64id\lib" />
+    <Folder Include="node_modules\fsevents\node_modules\boom\images" />
+    <Folder Include="node_modules\fsevents\node_modules\boom\lib" />
+    <Folder Include="node_modules\fsevents\node_modules\boom\test" />
+    <Folder Include="node_modules\fsevents\node_modules\debug\src" />
+    <Folder Include="node_modules\fsevents\node_modules\has-unicode" />
+    <Folder Include="node_modules\fsevents\node_modules\hawk\dist" />
+    <Folder Include="node_modules\fsevents\node_modules\hawk\example" />
+    <Folder Include="node_modules\fsevents\node_modules\hawk\images" />
+    <Folder Include="node_modules\fsevents\node_modules\hawk\lib" />
+    <Folder Include="node_modules\fsevents\node_modules\hawk\test" />
+    <Folder Include="node_modules\fsevents\node_modules\hoek\images" />
+    <Folder Include="node_modules\fsevents\node_modules\hoek\lib" />
+    <Folder Include="node_modules\fsevents\node_modules\hoek\test\modules" />
+    <Folder Include="node_modules\fsevents\node_modules\minimist\example" />
+    <Folder Include="node_modules\fsevents\node_modules\minimist\test" />
+    <Folder Include="node_modules\fsevents\node_modules\qs\dist" />
+    <Folder Include="node_modules\fsevents\node_modules\qs\lib" />
+    <Folder Include="node_modules\fsevents\node_modules\qs\test" />
+    <Folder Include="node_modules\fsevents\node_modules\rc\lib" />
+    <Folder Include="node_modules\fsevents\node_modules\rc\node_modules\minimist\example" />
+    <Folder Include="node_modules\fsevents\node_modules\rc\node_modules\minimist\test" />
+    <Folder Include="node_modules\fsevents\node_modules\rc\test" />
+    <Folder Include="node_modules\fsevents\node_modules\signal-exit" />
+    <Folder Include="node_modules\fsevents\node_modules\sshpk\bin" />
+    <Folder Include="node_modules\fsevents\node_modules\sshpk\lib\formats" />
+    <Folder Include="node_modules\fsevents\node_modules\sshpk\man\man1" />
+    <Folder Include="node_modules\fsevents\node_modules\sshpk\node_modules\assert-plus" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <Content Include="bootstrap3\.DS_Store" />
+  </ItemGroup>
 </Project>

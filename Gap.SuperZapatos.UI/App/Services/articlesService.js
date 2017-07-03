@@ -36,10 +36,23 @@
                 })
             };
             
+            var post = function (article, callback) {
+                $http({
+                    url: url + "/article/create",
+                    method: "post",
+                    data: JSON.stringify(article)
+                }).then(function successCallback(response) {
+                    return callback(false, response);
+                }, function errorCallback(response) {
+                    return callback(true, response);
+                });
+            };
+            
             return {
                 getAll: getAll,
                 get: get,
-                getByStoreId: getByStoreId
+                getByStoreId: getByStoreId,
+                post: post
             }
         }])
 })();
