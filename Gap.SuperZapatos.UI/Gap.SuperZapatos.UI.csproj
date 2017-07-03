@@ -6,9 +6,7 @@
     <Folder Include="App\Home\Components\Detail" />
     <Folder Include="App\Home\Components\Index" />
     <Folder Include="App\Services" />
-    <Folder Include="assets\css" />
     <Folder Include="assets\img" />
-    <Folder Include="assets\js" />
     <Folder Include="bootstrap3\css" />
     <Folder Include="bootstrap3\fonts" />
     <Folder Include="bootstrap3\js" />

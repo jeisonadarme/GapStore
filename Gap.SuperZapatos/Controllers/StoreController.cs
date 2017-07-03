@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Gap.Entities.Stores;
 using Gap.Stores.Services;
+using Gap.SuperZapatos.Filters;
 using Gap.SuperZapatos.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,7 @@ namespace Gap.SuperZapatos.Controllers
 
         private readonly IMapper _mapper;
         
+        
         public StoreController(IStoreService storeService, IMapper mapper)
         {
             _storeService = storeService;
@@ -22,6 +24,7 @@ namespace Gap.SuperZapatos.Controllers
         }
         
         [HttpPost]
+        [AccessFilter]
         public async Task<ActionResult> Create([FromBody]StoreModel model)
         {
             var store = _mapper.Map<StoreModel, Store>(model);

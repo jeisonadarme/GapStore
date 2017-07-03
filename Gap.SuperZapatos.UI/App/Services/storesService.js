@@ -31,7 +31,10 @@
                 $http({
                     url: url + "/store/create",
                     method: "post",
-                    data: store
+                    data: store,
+                    headers: {
+                        'Authorization': 'bXlfdXNlcjpteV9wYXNzd29yZA=='
+                    }
                 }).then(function successCallback(response) {
                     return callback(false, response);
                 }, function errorCallback(response) {

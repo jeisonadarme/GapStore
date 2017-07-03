@@ -43,7 +43,7 @@ namespace Gap.SuperZapatos
             services.AddSingleton<IArticleService, ArticleService>();
             
             services.AddAutoMapper();
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Environment.GetEnvironmentVariable("CONNECTION")));
 
         }
 
@@ -55,6 +55,7 @@ namespace Gap.SuperZapatos
 
             if (env.IsDevelopment())
             {
+                Environment.SetEnvironmentVariable("CONNECTION", Configuration.GetConnectionString("Default"));
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
             }

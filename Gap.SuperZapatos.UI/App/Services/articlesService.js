@@ -44,7 +44,10 @@
                 $http({
                     url: url + "/article/create",
                     method: "post",
-                    data: JSON.stringify(article)
+                    data: JSON.stringify(article),
+                    headers: {
+                        'Authorization': 'bXlfdXNlcjpteV9wYXNzd29yZA=='
+                    }
                 }).then(function successCallback(response) {
                     return callback(false, response);
                 }, function errorCallback(response) {
