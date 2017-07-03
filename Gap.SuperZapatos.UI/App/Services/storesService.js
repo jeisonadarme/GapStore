@@ -11,7 +11,7 @@
             
             var getAll = function (callback) {
                 $http({
-                    url: url + "/store/get",
+                    url: url + "/services/stores",
                     method: "get"
                 }).then(function (response) {
                     return callback(response);

@@ -22,18 +22,22 @@
                 $http({
                     url: url + "/services/articles/" + id,
                     method: "get"
-                }).then(function (response) {
-                    return callback(response);
-                })
+                }).then(function successCallback(response) {
+                    return callback(false, response);
+                }, function errorCallback(response) {
+                    return callback(true, response);
+                });
             };
             
             var getByStoreId = function (id, callback) {
                 $http({
                     url: url + "/services/articles/stores/" + id,
                     method: "get"
-                }).then(function (response) {
-                    return callback(response);
-                })
+                }).then(function successCallback(response) {
+                    return callback(false, response);
+                }, function errorCallback(response) {
+                    return callback(true, response);
+                });
             };
             
             var post = function (article, callback) {

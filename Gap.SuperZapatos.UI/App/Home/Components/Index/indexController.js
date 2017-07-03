@@ -22,12 +22,20 @@
                 return;
             }
             
-            articlesService.getByStoreId(id, function (response) {
+            articlesService.getByStoreId(id, function (error, response) {
+                
                 console.log(response);
+                
+                if (error){
+                    toastr.error('An error has occurred:  ' + response.statusText, {timeOut: 5000});
+                    return;    
+                }
+                
                 if (response.data.success){
                     $ctrl.articles = response.data.articles;
                 }
             });
+            
         };
         
         function getAll() {

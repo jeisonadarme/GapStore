@@ -33,7 +33,7 @@ namespace Gap.SuperZapatos.Controllers
         }
 
         //("services/stores")
-        [HttpGet]
+        [HttpGet("services/stores")]
         public async Task<ActionResult> Get()
         {
             var result = await _storeService.GetAll();

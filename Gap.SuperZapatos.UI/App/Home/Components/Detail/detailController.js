@@ -11,12 +11,25 @@
         var $ctrl = this;
         this.$routerOnActivate = function(next) {
             var id = next.params.id;
-            articlesService.get(id, function (response) {
+            
+            articlesService.get(id, function (error, response) {
+                
+                console.log(response);
+                
+                if (error){
+                    toastr.error('An error has occurred:  ' + response.statusText, {timeOut: 5000});
+                    return;    
+                }
+                
                 console.log(response);
                 if (response.data.success){
                     $ctrl.article = response.data.article;
+                }else{
+                    toastr.error('An error has occurred, try again later please.', {timeOut: 5000});
                 }
             });
+            
+            
         };
     }
 

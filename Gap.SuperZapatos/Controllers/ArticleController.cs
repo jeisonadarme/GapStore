@@ -48,10 +48,32 @@ namespace Gap.SuperZapatos.Controllers
         
         
         [HttpGet("services/articles/{id}")]
-        public async Task<ActionResult> Get(int id)
+        public async Task<ActionResult> Get(int? id)
         {
-            var result = await _articleService.GetWihtStore(id);
+            var storeId = 0;
+
+            if (id == null || !int.TryParse(id.ToString(), out storeId))
+            {
+                return  BadRequest( new
+                {
+                    success = false,
+                    error_msg = "Bad Request",
+                    error_code = 400
+                });
+            }
+            
+            var result = await _articleService.GetWihtStore(storeId);
             var article = _mapper.Map<Article, ArticleModel>(result);
+            
+            if (article == null)
+            {
+                return NotFound(new
+                {
+                    success = false,
+                    error_msg = "Record not Found",
+                    error_code = 404
+                });
+            }
             
             return Ok(new
             {
@@ -61,10 +83,32 @@ namespace Gap.SuperZapatos.Controllers
         }
         
         [HttpGet("services/articles/stores/{id}")]
-        public async Task<ActionResult> Stores(int id)
+        public async Task<ActionResult> Stores(int? id)
         {
-            var result = await _articleService.GetAllByStoreId(id);
+            var storeId = 0;
+
+            if (id == null || !int.TryParse(id.ToString(), out storeId))
+            {
+                return  BadRequest( new
+                {
+                    error_msg = "Bad Request",
+                    error_code = 400,
+                    success = false
+                });
+            }
+            
+            var result = await _articleService.GetAllByStoreId(storeId);
             var articles = _mapper.Map<IEnumerable<Article>, IEnumerable<ArticleModel>>(result);
+
+            if (!articles.Any())
+            {
+                return NotFound(new
+                {
+                    success = false,
+                    error_msg = "Record not Found",
+                    error_code = 404
+                });
+            }
             
             return Ok(new
             {
