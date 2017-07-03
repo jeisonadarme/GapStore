@@ -55,6 +55,7 @@ namespace Gap.SuperZapatos
 
             if (env.IsDevelopment())
             {
+                var connection = Configuration.GetConnectionString("Default");
                 Environment.SetEnvironmentVariable("CONNECTION", Configuration.GetConnectionString("Default"));
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();

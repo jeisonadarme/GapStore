@@ -5,9 +5,9 @@
     'use strict';
 
     angular.module('storesService', [])
-        .factory('storesService', ['$http', function($http){
+        .factory('storesService', ['$http','urlApi', 'token', function($http, urlApi, token){
             
-            var url = "http://localhost:5000";
+            var url = urlApi;
             
             var getAll = function (callback) {
                 $http({
@@ -33,7 +33,7 @@
                     method: "post",
                     data: store,
                     headers: {
-                        'Authorization': 'bXlfdXNlcjpteV9wYXNzd29yZA=='
+                        'Authorization': token
                     }
                 }).then(function successCallback(response) {
                     return callback(false, response);

@@ -5,9 +5,9 @@
     'use strict';
 
     angular.module('articlesService', [])
-        .factory('articlesService', ['$http', function($http){
+        .factory('articlesService', ['$http','urlApi', 'token', function($http, urlApi, token){
             
-            var url = "http://localhost:5000";
+            var url = urlApi;
             
             var getAll = function (callback) {
                 $http({
@@ -46,7 +46,7 @@
                     method: "post",
                     data: JSON.stringify(article),
                     headers: {
-                        'Authorization': 'bXlfdXNlcjpteV9wYXNzd29yZA=='
+                        'Authorization': token
                     }
                 }).then(function successCallback(response) {
                     return callback(false, response);

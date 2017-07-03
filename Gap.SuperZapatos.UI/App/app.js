@@ -18,4 +18,10 @@
                 { path: "/administration", name: "Create", component: "create" }
             ]
         });
+    
+    
+    angular.module('app').config(['$qProvider', function ($qProvider) {
+        $qProvider.errorOnUnhandledRejections(false);
+    }]);
+    
 })(window.angular);
